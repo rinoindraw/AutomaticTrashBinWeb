@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate  } from "react-router-dom";
 import "./App.css";
 import SideBar from "./components/SideBar/SideBar";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -45,6 +45,8 @@ function App() {
           <Route path="/trashbin2" element={<TrashBinTwo />} />
           <Route path="/trashbin3" element={<TrashBinThree />} />
           <Route path="/about" element={<Banner />} />
+
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
     </Router>
