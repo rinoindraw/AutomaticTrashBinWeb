@@ -7,7 +7,6 @@ import pkmLogo from "../../assets/pkm_logo.png";
 import pkmkcLogo from "../../assets/pkm.png";
 import gundar from "../../assets/gundar.png";
 import kampusMerdeka from "../../assets/kammerdeka.png";
-import Footer from "../Footer/Footer";
 
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -127,7 +126,6 @@ const Banner = () => {
           </Row>
         </Container>
       </div>
-      <Footer />
     </section>
   );
 };

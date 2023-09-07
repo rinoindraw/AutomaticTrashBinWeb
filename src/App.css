@@ -56,6 +56,7 @@ body {
   transition: var(--tran-02);
   font-weight: 400;
   position: relative;
+  background-color: #176B87;
 }
 
 html {
@@ -275,6 +276,12 @@ html {
     align-items: flex-start;
     width: 94%;
     margin-left: 0.5rem;
+  }
+
+  .supportLogo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 150px;
   }
 }
 
