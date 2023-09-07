@@ -52,5 +52,12 @@
     .socialFooter {
       display: none;
     }
+    .logoFooter{
+      margin-right: 50px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #ffff;
+      width: 100%;
+    }
   }
   
