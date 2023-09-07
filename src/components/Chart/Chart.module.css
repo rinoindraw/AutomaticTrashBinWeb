@@ -1,0 +1,74 @@
+/* GraphicChart.module.css */
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap");
+
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 2rem;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+}
+
+.barContainer {
+  width: 100%;
+  max-width: 1140px;
+  height: auto;
+  padding-bottom: 110px;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.chartLabel {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.chart {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.barChart {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.chartText {
+  margin-top: 1rem;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.cardwrapper {
+  padding: 1rem;
+  border-radius: 30px;
+  -webkit-box-shadow: 1px 10px 15px #176b87;
+  -moz-box-shadow: 1px 10px 15px #176b87;
+  box-shadow: 1px 10px 15px #176b87;
+  background-color: rgba(23, 107, 135, 0.5);
+}
+
+@media (max-width: 768px) {
+  .chartContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1rem 0 2.2rem 1.5rem;
+    width: 65%;
+    max-width: 360px;
+    height: auto;
+  }
+
+  .barContainer {
+    display: none;
+  }
+}
