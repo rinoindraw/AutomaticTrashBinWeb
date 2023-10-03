@@ -1,9 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Chart } from "chart.js/auto";
 import styles from "./GraphicChart.module.css";
+import { database } from "../../firebase"; // Sesuaikan dengan path ke file konfigurasi Firebase Anda
+import { ref, onValue } from "firebase/database";
 
 const BarChart = () => {
   const chartRef = useRef(null);
+  const [metalCapacity, setMetalCapacity] = useState(0);
+  const [organicCapacity, setOrganicCapacity] = useState(0);
+  const [unorganicCapacity, setUnorganicCapacity] = useState(0);
 
   useEffect(() => {
     const ctx = chartRef.current.getContext("2d");
@@ -11,10 +16,6 @@ const BarChart = () => {
     if (window.barChart) {
       window.barChart.destroy();
     }
-
-    const data1 = 75;
-    const data2 = 65;
-    const data3 = 50;
 
     const chartData = {
       labels: ["Trash Bin"],
@@ -26,7 +27,7 @@ const BarChart = () => {
           borderWidth: 1,
           hoverBackgroundColor: "rgba(23, 107, 135, 0.7)",
           hoverBorderColor: "#176B87",
-          data: [data1],
+          data: [metalCapacity],
         },
         {
           label: "Organic Trash Bin",
@@ -35,7 +36,7 @@ const BarChart = () => {
           borderWidth: 1,
           hoverBackgroundColor: "rgba(0, 128, 0, 0.7)",
           hoverBorderColor: "rgba(0, 128, 0, 1)",
-          data: [data2],
+          data: [organicCapacity],
         },
         {
           label: "UnOrganic Trash Bin",
@@ -44,7 +45,7 @@ const BarChart = () => {
           borderWidth: 1,
           hoverBackgroundColor: "rgba(255, 0, 0, 0.7)",
           hoverBorderColor: "rgba(255, 0, 0, 1)",
-          data: [data3],
+          data: [unorganicCapacity],
         },
       ],
     };
@@ -74,6 +75,27 @@ const BarChart = () => {
       type: "bar",
       data: chartData,
       options: chartOptions,
+    });
+  }, [metalCapacity, organicCapacity, unorganicCapacity]);
+
+  useEffect(() => {
+    const metalRef = ref(database, "tong_sampah/kapasitas_metal");
+    const organicRef = ref(database, "tong_sampah/kapasitas_organik");
+    const unorganicRef = ref(database, "tong_sampah/kapasitas_unorganik");
+
+    onValue(metalRef, (snapshot) => {
+      const data = snapshot.val();
+      setMetalCapacity(data);
+    });
+
+    onValue(organicRef, (snapshot) => {
+      const data = snapshot.val();
+      setOrganicCapacity(data);
+    });
+
+    onValue(unorganicRef, (snapshot) => {
+      const data = snapshot.val();
+      setUnorganicCapacity(data);
     });
   }, []);
 

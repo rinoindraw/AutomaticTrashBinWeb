@@ -4,9 +4,9 @@ import { Container, Col, Row } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import pkmLogo from "../../assets/pkm_logo.png";
-import pkmkcLogo from "../../assets/pkm.png";
-import gundar from "../../assets/gundar.png";
-import kampusMerdeka from "../../assets/kammerdeka.png";
+import pkmkcLogo from "../../assets/pkmsmall.png";
+import gundar from "../../assets/gundarsmall.png";
+import kampusMerdeka from "../../assets/kammerdekasmall.png";
 
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);

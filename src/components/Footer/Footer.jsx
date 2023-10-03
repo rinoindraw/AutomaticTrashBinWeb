@@ -1,8 +1,8 @@
 import React from "react";
 import navIcon3 from "../../assets/nav-icon3.svg";
-import pkmkcLogo from "../../assets/pkm.png";
-import gundar from "../../assets/gundar.png";
-import kampusMerdeka from "../../assets/kammerdeka.png";
+import pkmkcLogo from "../../assets/pkmsmall.png";
+import gundar from "../../assets/gundarsmall.png";
+import kampusMerdeka from "../../assets/kammerdekasmall.png";
 import styles from "./Footer.module.css";
 
 function Footer() {
